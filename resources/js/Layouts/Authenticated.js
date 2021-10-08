@@ -24,6 +24,10 @@ export default function Authenticated({ auth, header, children }) {
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Dashboard
                                 </NavLink>
+
+                                <NavLink href={route('courses.index')} active={route().current('courses.index')}>
+                                    Courses
+                                </NavLink>
                             </div>
                         </div>
 
@@ -117,7 +121,7 @@ export default function Authenticated({ auth, header, children }) {
                 </header>
             )}
 
-            <main>{children}</main>
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">{children}</main>
         </div>
     );
 }
