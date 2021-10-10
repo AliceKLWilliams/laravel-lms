@@ -31,4 +31,19 @@ class ModuleController extends Controller
 
         return Redirect::route('course.edit', $course);
     }
+
+    public function edit(Request $request, Course $course, Module $module)
+    {
+        return Inertia::render('Admin/Module/Edit', [
+            'module' => $module,
+            'course' => $course,
+        ]);
+    }
+
+    public function update(Request $request, Course $course, Module $module)
+    {
+        $module->update($request->all());
+
+        return Redirect::route('course.edit', $course);
+    }
 }
