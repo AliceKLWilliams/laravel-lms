@@ -11,7 +11,7 @@ const Create = ({auth, errors}) => {
     });
 
 	return (
-		<Authenticated auth={auth} errors={errors}>
+		<Authenticated auth={auth} errors={errors} header={<h2>Create Course</h2>}>
 			<form onSubmit={(e) => {
 				e.preventDefault();
 				post(route('course.store'));
@@ -19,7 +19,7 @@ const Create = ({auth, errors}) => {
 				<ValidationErrors errors={formErrors} />
 
 				<CourseFields form={data} setData={setData}/>
-				<Button>Create</Button>
+				<Button className="mt-4">Create</Button>
 			</form>
 		</Authenticated>
 	)

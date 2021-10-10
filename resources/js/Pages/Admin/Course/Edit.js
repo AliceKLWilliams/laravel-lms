@@ -20,7 +20,7 @@ const Index = ({course, auth, errors}) => {
                 put(route('course.update', course));
             }}>
                 <CourseFields form={data} setData={setData} />
-                <Button>
+                <Button className="mt-4">
                     Save Changes
                 </Button>
             </form>
