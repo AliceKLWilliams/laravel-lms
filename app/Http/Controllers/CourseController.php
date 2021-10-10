@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCourseRequest;
+use App\Http\Requests\UpdateCourseRequest;
 use Inertia\Inertia;
 use App\Models\Course;
 use Illuminate\Http\Request;
@@ -32,6 +33,20 @@ class CourseController extends Controller
     public function store(StoreCourseRequest $request)
     {
         Course::create($request->all());
+
+        return Redirect::route('course.index');
+    }
+
+    public function update(UpdateCourseRequest $request, Course $course)
+    {
+        $course->update($request->all());
+
+        return Redirect::route('course.index');
+    }
+
+    public function destroy(Request $request, Course $course)
+    {
+        $course->delete();
 
         return Redirect::route('course.index');
     }

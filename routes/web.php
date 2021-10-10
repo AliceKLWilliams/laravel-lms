@@ -30,7 +30,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::resource('/course', CourseController::class)->only(['index', 'edit', 'create', 'store']);
+    Route::resource('/course', CourseController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
 });
 
 
