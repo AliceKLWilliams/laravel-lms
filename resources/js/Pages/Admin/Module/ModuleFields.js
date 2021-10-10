@@ -4,7 +4,7 @@ import {Editor} from '@tinymce/tinymce-react';
 import Input from '@/Components/Input';
 import Label from '@/Components/Label';
 
-const CourseFields = ({form, setData, editorRef, content}) => {
+const ModuleFields = ({form, setData, editorRef, content}) => {
     
     return (
         <>
@@ -24,4 +24,4 @@ const CourseFields = ({form, setData, editorRef, content}) => {
     )
 }
 
-export default CourseFields;
+export default ModuleFields;

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ModuleController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -31,6 +32,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 
     Route::resource('/course', CourseController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
+    Route::resource('course.module', ModuleController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
 });
 
 

@@ -22,6 +22,7 @@ class CourseController extends Controller
     {
         return Inertia::render('Admin/Course/Edit', [
             'course' => $course,
+            'modules' => $course->modules,
         ]);
     }
 

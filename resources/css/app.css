@@ -5,3 +5,12 @@
 .button {
 	@apply inline-flex items-center px-4 py-2 bg-gray-900 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-900 transition ease-in-out duration-150;
 }
+
+.table {
+	@apply bg-white rounded shadow w-full;
+}
+
+.table th,
+.table td {
+	@apply py-4 px-5 text-left;
+}
