@@ -1,14 +1,21 @@
 import Authenticated from '@/Layouts/Authenticated';
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { useForm } from '@inertiajs/inertia-react'
 import CourseFields from './CourseFields';
 import Button from '@/Components/Button';
 
 const Index = ({course, auth, errors}) => {
-    const { data, setData, put, processing, errors: formErrors } = useForm({
+    const { data, setData, put, transform, errors: formErrors } = useForm({
         title: course.title
     });
+
+    let editorRef = useRef(null);
+
+    transform(data => ({
+        ...data,
+        content: editorRef.current.getContent()
+    }));
 
     return (
         <Authenticated
@@ -19,7 +26,7 @@ const Index = ({course, auth, errors}) => {
                 e.preventDefault();
                 put(route('course.update', course));
             }}>
-                <CourseFields form={data} setData={setData} />
+                <CourseFields form={data} setData={setData} content={course.content} editorRef={editorRef}/>
                 <Button className="mt-4">
                     Save Changes
                 </Button>
