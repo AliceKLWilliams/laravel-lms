@@ -12,14 +12,14 @@ const CourseTable = ({courses}) => {
                 </tr>
             </thead>
             <tbody>
-                {!courses.length && <tr><td colSpan="3">No courses.</td></tr>}
+                {!courses.length && <tr><td colSpan="3" className="py-4 px-5">No courses. <Link href={route('course.create')}>Create a course</Link></td></tr>}
 
                 {courses.map(course => (
                     <tr>
                         <td className="py-4 px-5">{course.title}</td>
                         <td className="py-4 px-5">{course.created_at}</td>
                         <td>
-                            <Link href={route('courses.edit', course)}>
+                            <Link href={route('course.edit', course)}>
                                 Edit
                             </Link>
                         </td>

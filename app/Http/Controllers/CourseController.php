@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCourseRequest;
 use Inertia\Inertia;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class CourseController extends Controller
 {
@@ -20,5 +22,17 @@ class CourseController extends Controller
         return Inertia::render('Admin/Course/Edit', [
             'course' => $course,
         ]);
+    }
+
+    public function create()
+    {
+        return Inertia::render('Admin/Course/Create');
+    }
+
+    public function store(StoreCourseRequest $request)
+    {
+        Course::create($request->all());
+
+        return Redirect::route('course.index');
     }
 }
