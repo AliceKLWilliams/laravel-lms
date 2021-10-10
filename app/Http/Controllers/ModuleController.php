@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreModuleRequest;
+use App\Http\Requests\UpdateModuleRequest;
 use App\Models\Course;
 use App\Models\Module;
 use Illuminate\Http\Request;
@@ -40,9 +41,16 @@ class ModuleController extends Controller
         ]);
     }
 
-    public function update(Request $request, Course $course, Module $module)
+    public function update(UpdateModuleRequest $request, Course $course, Module $module)
     {
         $module->update($request->all());
+
+        return Redirect::route('course.edit', $course);
+    }
+
+    public function destroy(Request $request, Course $course, Module $module)
+    {
+        $module->delete();
 
         return Redirect::route('course.edit', $course);
     }
