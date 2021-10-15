@@ -1,7 +1,7 @@
 import LinkButton from '@/Components/LinkButton';
 import Authenticated from '@/Layouts/Authenticated';
 import React from 'react';
-import CourseTable from './CourseTable';
+import CourseTable from '../../../Components/Course/CourseTable';
 
 const Index = ({courses, auth, errors}) => {
     return (

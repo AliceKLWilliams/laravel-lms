@@ -2,7 +2,7 @@ import Button from '@/Components/Button';
 import Authenticated from '@/Layouts/Authenticated'
 import { useForm } from '@inertiajs/inertia-react'
 import React, { useRef } from 'react'
-import ModuleFields from './ModuleFields';
+import ModuleFields from '../../../Components/Module/ModuleFields';
 
 export default function({auth, errors, course}) {
 	const {data, setData, post, transform, errors: formErrors} = useForm({

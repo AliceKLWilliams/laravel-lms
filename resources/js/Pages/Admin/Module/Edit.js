@@ -2,9 +2,9 @@ import Authenticated from '@/Layouts/Authenticated';
 import React, { useRef } from 'react';
 
 import { useForm } from '@inertiajs/inertia-react'
-import ModuleFields from './ModuleFields';
+import ModuleFields from '../../../Components/Module/ModuleFields';
 import Button from '@/Components/Button';
-import LessonTable from '../Lesson/LessonTable';
+import LessonTable from '../../../Components/Lesson/LessonTable';
 import LinkButton from '@/Components/LinkButton';
 
 export default ({course, module, lessons, auth, errors}) => {

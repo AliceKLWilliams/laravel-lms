@@ -2,9 +2,9 @@ import Authenticated from '@/Layouts/Authenticated';
 import React, { useRef } from 'react';
 
 import { useForm } from '@inertiajs/inertia-react'
-import CourseFields from './CourseFields';
+import CourseFields from '../../../Components/Course/CourseFields';
 import Button from '@/Components/Button';
-import ModuleTable from '../Module/ModuleTable';
+import ModuleTable from '../../../Components/Module/ModuleTable';
 import LinkButton from '@/Components/LinkButton';
 
 const Index = ({course, modules, auth, errors}) => {

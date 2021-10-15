@@ -1,7 +1,7 @@
 import Button from '@/Components/Button';
 import React, { useRef } from 'react'
 import { useForm } from '@inertiajs/inertia-react'
-import CourseFields from './CourseFields';
+import CourseFields from '../../../Components/Course/CourseFields';
 import Authenticated from '@/Layouts/Authenticated';
 import ValidationErrors from '@/Components/ValidationErrors';
 
