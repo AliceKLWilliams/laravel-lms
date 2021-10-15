@@ -5078,6 +5078,90 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Admin/Lesson/Edit.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/Admin/Lesson/Edit.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var _LessonFields__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LessonFields */ "./resources/js/Pages/Admin/Lesson/LessonFields.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (_ref) {
+  var course = _ref.course,
+      module = _ref.module,
+      lesson = _ref.lesson,
+      auth = _ref.auth,
+      errors = _ref.errors;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.useForm)({
+    title: lesson.title
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      put = _useForm.put,
+      transform = _useForm.transform,
+      formErrors = _useForm.errors;
+
+  var editorRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  transform(function (data) {
+    return _objectSpread(_objectSpread({}, data), {}, {
+      content: editorRef.current.getContent()
+    });
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    auth: auth,
+    errors: errors,
+    header: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h2", {
+      className: "font-semibold text-xl text-gray-800 leading-tight",
+      children: ["Edit ", lesson.title]
+    }),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+      className: "mb-8",
+      onSubmit: function onSubmit(e) {
+        e.preventDefault();
+        put(route('course.module.lesson.update', {
+          course: course,
+          module: module,
+          lesson: lesson
+        }));
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_LessonFields__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        form: data,
+        setData: setData,
+        content: lesson.content,
+        editorRef: editorRef
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        className: "mt-4",
+        children: "Save Changes"
+      })]
+    })
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Admin/Lesson/LessonFields.js":
 /*!*********************************************************!*\
   !*** ./resources/js/Pages/Admin/Lesson/LessonFields.js ***!
@@ -5195,7 +5279,15 @@ __webpack_require__.r(__webpack_exports__);
             children: dayjs__WEBPACK_IMPORTED_MODULE_1___default()(lesson.created_at).format('DD/MM/YYYY')
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "flex flex-wrap gap-4 items-center"
+              className: "flex flex-wrap gap-4 items-center",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+                href: route('course.module.lesson.edit', {
+                  course: course,
+                  module: module,
+                  lesson: lesson
+                }),
+                children: "Edit"
+              })
             })
           })]
         }, lesson.id);
@@ -60627,6 +60719,8 @@ var map = {
 	"./Admin/Course/Index.js": "./resources/js/Pages/Admin/Course/Index.js",
 	"./Admin/Lesson/Create": "./resources/js/Pages/Admin/Lesson/Create.js",
 	"./Admin/Lesson/Create.js": "./resources/js/Pages/Admin/Lesson/Create.js",
+	"./Admin/Lesson/Edit": "./resources/js/Pages/Admin/Lesson/Edit.js",
+	"./Admin/Lesson/Edit.js": "./resources/js/Pages/Admin/Lesson/Edit.js",
 	"./Admin/Lesson/LessonFields": "./resources/js/Pages/Admin/Lesson/LessonFields.js",
 	"./Admin/Lesson/LessonFields.js": "./resources/js/Pages/Admin/Lesson/LessonFields.js",
 	"./Admin/Lesson/LessonTable": "./resources/js/Pages/Admin/Lesson/LessonTable.js",

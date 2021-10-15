@@ -9,6 +9,7 @@ use App\Models\Module;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\StoreLessonRequest;
+use App\Http\Requests\UpdateLessonRequest;
 
 class LessonController extends Controller
 {
@@ -37,21 +38,24 @@ class LessonController extends Controller
         ]);
     }
 
-    // public function edit(Request $request, Course $course, Module $module)
-    // {
-    //     return Inertia::render('Admin/Module/Edit', [
-    //         'module' => $module,
-    //         'course' => $course,
-    //         'lessons' => $module->lessons
-    //     ]);
-    // }
+    public function edit(Request $request, Course $course, Module $module, Lesson $lesson)
+    {
+        return Inertia::render('Admin/Lesson/Edit', [
+            'module' => $module,
+            'course' => $course,
+            'lesson' => $lesson
+        ]);
+    }
 
-    // public function update(UpdateModuleRequest $request, Course $course, Module $module)
-    // {
-    //     $module->update($request->all());
+    public function update(UpdateLessonRequest $request, Course $course, Module $module, Lesson $lesson)
+    {
+        $lesson->update($request->all());
 
-    //     return Redirect::route('course.edit', $course);
-    // }
+        return Redirect::route('course.module.edit', [
+            'course' => $course,
+            'module' => $module
+        ]);
+    }
 
     // public function destroy(Request $request, Course $course, Module $module)
     // {
