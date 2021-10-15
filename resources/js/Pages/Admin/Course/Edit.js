@@ -6,6 +6,7 @@ import CourseFields from '../../../Components/Course/CourseFields';
 import Button from '@/Components/Button';
 import ModuleTable from '../../../Components/Module/ModuleTable';
 import LinkButton from '@/Components/LinkButton';
+import ValidationErrors from '@/Components/ValidationErrors';
 
 const Index = ({course, modules, auth, errors}) => {
     const { data, setData, put, transform, errors: formErrors } = useForm({
@@ -30,6 +31,7 @@ const Index = ({course, modules, auth, errors}) => {
                 e.preventDefault();
                 put(route('course.update', course));
             }}>
+                <ValidationErrors errors={formErrors} />
                 <CourseFields form={data} setData={setData} content={course.content} editorRef={editorRef}/>
                 <Button className="mt-4">
                     Save Changes

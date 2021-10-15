@@ -38,7 +38,7 @@ class CourseController extends Controller
         return Redirect::route('course.index');
     }
 
-    public function update(Request $request, Course $course)
+    public function update(UpdateCourseRequest $request, Course $course)
     {
         $course->update($request->all());
 

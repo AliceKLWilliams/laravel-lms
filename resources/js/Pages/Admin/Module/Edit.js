@@ -6,6 +6,7 @@ import ModuleFields from '../../../Components/Module/ModuleFields';
 import Button from '@/Components/Button';
 import LessonTable from '../../../Components/Lesson/LessonTable';
 import LinkButton from '@/Components/LinkButton';
+import ValidationErrors from '@/Components/ValidationErrors';
 
 export default ({course, module, lessons, auth, errors}) => {
     const { data, setData, put, transform, errors: formErrors } = useForm({
@@ -33,6 +34,7 @@ export default ({course, module, lessons, auth, errors}) => {
                         module
                     }));
                 }}>
+                <ValidationErrors errors={formErrors} />
                 <ModuleFields form={data} setData={setData} content={module.content} editorRef={editorRef}/>
                 <Button className="mt-4">
                     Save Changes

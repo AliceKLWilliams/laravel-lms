@@ -1,8 +1,10 @@
-import Button from '@/Components/Button';
-import Authenticated from '@/Layouts/Authenticated'
 import { useForm } from '@inertiajs/inertia-react'
 import React, { useRef } from 'react'
+
+import Button from '@/Components/Button';
+import Authenticated from '@/Layouts/Authenticated'
 import ModuleFields from '../../../Components/Module/ModuleFields';
+import ValidationErrors from '@/Components/ValidationErrors';
 
 export default function({auth, errors, course}) {
 	const {data, setData, post, transform, errors: formErrors} = useForm({
@@ -26,6 +28,7 @@ export default function({auth, errors, course}) {
 					e.preventDefault();
 					post(route('course.module.store', course))
 				}}>
+					<ValidationErrors errors={formErrors} />
 					<ModuleFields form={data} setData={setData} editorRef={editorRef}/>
 					<Button>
 						Create

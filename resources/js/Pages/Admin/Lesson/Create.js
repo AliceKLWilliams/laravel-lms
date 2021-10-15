@@ -3,6 +3,7 @@ import Authenticated from '@/Layouts/Authenticated'
 import { useForm } from '@inertiajs/inertia-react'
 import React, { useRef } from 'react'
 import LessonFields from '../../../Components/Lesson/LessonFields';
+import ValidationErrors from '@/Components/ValidationErrors';
 
 export default function({auth, errors, course, module}) {
 	const {data, setData, post, transform, errors: formErrors} = useForm({
@@ -29,6 +30,7 @@ export default function({auth, errors, course, module}) {
                         module
                     }))
 				}}>
+					<ValidationErrors errors={formErrors} />
 					<LessonFields form={data} setData={setData} editorRef={editorRef}/>
 					<Button>
 						Create

@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import { useForm } from '@inertiajs/inertia-react'
 import Button from '@/Components/Button';
 import LessonFields from '../../../Components/Lesson/LessonFields';
+import ValidationErrors from '@/Components/ValidationErrors';
 
 export default ({course, module, lesson, auth, errors}) => {
     const { data, setData, put, transform, errors: formErrors } = useForm({
@@ -32,6 +33,7 @@ export default ({course, module, lesson, auth, errors}) => {
                         lesson
                     }));
                 }}>
+                <ValidationErrors errors={formErrors} />
                 <LessonFields form={data} setData={setData} content={lesson.content} editorRef={editorRef}/>
                 <Button className="mt-4">
                     Save Changes
