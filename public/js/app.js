@@ -5278,16 +5278,28 @@ __webpack_require__.r(__webpack_exports__);
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
             children: dayjs__WEBPACK_IMPORTED_MODULE_1___default()(lesson.created_at).format('DD/MM/YYYY')
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "flex flex-wrap gap-4 items-center",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
                 href: route('course.module.lesson.edit', {
                   course: course,
                   module: module,
                   lesson: lesson
                 }),
                 children: "Edit"
-              })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
+                onSubmit: function onSubmit(e) {
+                  e.preventDefault();
+                  destroy(route('course.module.lesson.destroy', {
+                    course: course,
+                    module: module,
+                    lesson: lesson
+                  }));
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                  children: "Delete"
+                })
+              })]
             })
           })]
         }, lesson.id);

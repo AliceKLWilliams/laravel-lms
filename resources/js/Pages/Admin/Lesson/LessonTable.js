@@ -32,15 +32,16 @@ export default function({lessons, course, module}) {
 								})}>
                                     Edit
                                 </Link>
-                                {/* <form onSubmit={e => {
+                                <form onSubmit={e => {
                                     e.preventDefault();
-                                    destroy(route('course.module.destroy', {
+                                    destroy(route('course.module.lesson.destroy', {
 										course,
-										module
+										module,
+										lesson
 									}));
                                 }}>
                                     <Button>Delete</Button>
-                                </form> */}
+                                </form>
 							</div>
 						</td>
 					</tr>

@@ -57,10 +57,13 @@ class LessonController extends Controller
         ]);
     }
 
-    // public function destroy(Request $request, Course $course, Module $module)
-    // {
-    //     $module->delete();
+    public function destroy(Request $request, Course $course, Module $module, Lesson $lesson)
+    {
+        $lesson->delete();
 
-    //     return Redirect::route('course.edit', $course);
-    // }
+        return Redirect::route('course.module.edit', [
+            'course' => $course,
+            'module' => $module
+        ]);
+    }
 }
