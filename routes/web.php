@@ -26,7 +26,7 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('home');
 
 Route::prefix('admin')->middleware(['auth', 'verified', 'isAdmin'])->group(function () {
     Route::get('/', function () {
