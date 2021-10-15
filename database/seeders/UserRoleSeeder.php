@@ -15,13 +15,14 @@ class UserRoleSeeder extends Seeder
     public function run()
     {
         $userRoles = [
-            'admin',
-            'student'
+            'admin' => 'Admin',
+            'student' => 'Student',
         ];
 
-        foreach ($userRoles as $userRole) {
+        foreach ($userRoles as $name => $displayName) {
             UserRole::create([
-                'name' => $userRole
+                'name' => $name,
+                'display_name' => $displayName
             ]);
         }
     }

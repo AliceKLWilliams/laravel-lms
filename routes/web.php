@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ModuleController;
@@ -35,6 +36,8 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::resource('/course', CourseController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
     Route::resource('course.module', ModuleController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
     Route::resource('course.module.lesson', LessonController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
+
+    Route::resource('user', UserController::class)->only(['index', 'create', 'store']);
 });
 
 
