@@ -17,7 +17,7 @@
 
 h1,
 .h1 {
-	@apply text-5xl font-bold mb-2;
+	@apply text-5xl font-bold mb-6;
 }
 
 h2,
