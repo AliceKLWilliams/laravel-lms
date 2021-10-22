@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@/Layouts/Layout';
 import { Link } from '@inertiajs/inertia-react';
+import LessonList from '@/Components/Front/Lesson/LessonList';
 
 export default function({course, module, lessons}){
     return (
@@ -11,11 +12,7 @@ export default function({course, module, lessons}){
 
             <div>
                 <h2>Lessons</h2>
-                <ul>
-                    {lessons.map(lesson => (
-                        <li>{lesson.title} <Link className="underline" href={route('courses.modules.lessons.show', {course, module, lesson})}>View Lesson</Link></li>
-                    ))}
-                </ul>
+                <LessonList course={course} module={module} lessons={lessons} />
             </div>
         </Layout>
     )
