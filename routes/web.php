@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Admin\CourseUserController;
-use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -39,7 +38,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'isAdmin'])->group(funct
     Route::resource('course.module', App\Http\Controllers\Admin\ModuleController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
     Route::resource('course.module.lesson', App\Http\Controllers\Admin\LessonController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
 
-    Route::resource('user', UserController::class)->only(['index', 'create', 'store']);
+    Route::resource('user', App\Http\Controllers\Admin\UserController::class)->only(['index', 'create', 'store']);
 
     Route::resource('course.user', CourseUserController::class)->only(['store', 'destroy']);
 });
