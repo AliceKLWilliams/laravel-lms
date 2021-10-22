@@ -11,10 +11,17 @@ A Learner Management System created in Laravel. This project was started due to 
 ### Modules
 - Each course can have a number of modules.
 - Each module has a title and some content (WYSIWYG)
+- Modules can be viewed by anyone
 
 ### Lessons
 - Each module can have a number of lessons;
 - Each lesson has a title and some content (WYSIWYG)
+- Lessons can be viewed by anyone
+
+### Users
+- Users can create their own accounts
+- Admins can create other users (Admins or Students)
+- Admins can assign users to courses
 
 ## Technlogies Used
 - Laravel
