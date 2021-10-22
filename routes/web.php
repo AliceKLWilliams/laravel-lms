@@ -30,10 +30,6 @@ Route::resource('courses.modules', App\Http\Controllers\Front\ModuleController::
 Route::resource('courses.modules.lessons', App\Http\Controllers\Front\LessonController::class)->only(['show']);
 
 Route::prefix('admin')->middleware(['auth', 'verified', 'isAdmin'])->group(function () {
-    Route::get('/', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
-
     Route::resource('/course', App\Http\Controllers\Admin\CourseController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
     Route::resource('course.module', App\Http\Controllers\Admin\ModuleController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
     Route::resource('course.module.lesson', App\Http\Controllers\Admin\LessonController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
