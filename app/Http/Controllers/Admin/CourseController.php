@@ -1,23 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreCourseRequest;
-use App\Http\Requests\UpdateCourseRequest;
 use Inertia\Inertia;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\StoreCourseRequest;
+use App\Http\Requests\UpdateCourseRequest;
 
 class CourseController extends Controller
 {
-    public function show(Request $request, Course $course)
-    {
-        return Inertia::render('Front/Course/Show', [
-            'course' => $course,
-        ]);
-    }
-
     public function index()
     {
         return Inertia::render('Admin/Course/Index', [

@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreModuleRequest;
-use App\Http\Requests\UpdateModuleRequest;
+use Inertia\Inertia;
 use App\Models\Course;
 use App\Models\Module;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
-use Inertia\Inertia;
+use App\Http\Requests\StoreModuleRequest;
+use App\Http\Requests\UpdateModuleRequest;
 
 class ModuleController extends Controller
 {

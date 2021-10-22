@@ -24,6 +24,7 @@ const CourseTable = ({courses}) => {
                         <td>{dayjs(course.created_at).format('DD/MM/YYYY')}</td>
                         <td>
                             <div className="flex flex-wrap gap-4 items-center">
+                                <Link href={route('courses.show', course)}>View</Link>
                                 <Link href={route('course.edit', course)}>
                                     Edit
                                 </Link>
