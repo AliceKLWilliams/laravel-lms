@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '@/Layouts/Layout';
-import CourseCard from '@/Components/Course/CourseCard';
+import CourseCard from '@/Components/Front/CourseCard';
 
 export default function({courses}){
     return (

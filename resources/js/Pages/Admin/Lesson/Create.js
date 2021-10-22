@@ -2,7 +2,7 @@ import Button from '@/Components/Button';
 import Authenticated from '@/Layouts/Authenticated'
 import { useForm } from '@inertiajs/inertia-react'
 import React, { useRef } from 'react'
-import LessonFields from '../../../Components/Lesson/LessonFields';
+import LessonFields from '../../../Components/Admin/Lesson/LessonFields';
 import ValidationErrors from '@/Components/ValidationErrors';
 
 export default function({auth, errors, course, module}) {

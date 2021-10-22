@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 
 import Button from '@/Components/Button';
 import Authenticated from '@/Layouts/Authenticated'
-import ModuleFields from '../../../Components/Module/ModuleFields';
+import ModuleFields from '../../../Components/Admin/Module/ModuleFields';
 import ValidationErrors from '@/Components/ValidationErrors';
 
 export default function({auth, errors, course}) {

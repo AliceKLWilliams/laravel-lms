@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 
 import { useForm } from '@inertiajs/inertia-react'
 import Button from '@/Components/Button';
-import LessonFields from '../../../Components/Lesson/LessonFields';
+import LessonFields from '../../../Components/Admin/Lesson/LessonFields';
 import ValidationErrors from '@/Components/ValidationErrors';
 
 export default ({course, module, lesson, auth, errors}) => {
