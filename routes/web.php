@@ -28,6 +28,8 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
+Route::get('/course/{course}', [CourseController::class, 'show']);
+
 Route::prefix('admin')->middleware(['auth', 'verified', 'isAdmin'])->group(function () {
     Route::get('/', function () {
         return Inertia::render('Dashboard');

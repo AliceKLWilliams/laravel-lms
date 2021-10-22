@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Redirect;
 
 class CourseController extends Controller
 {
+    public function show(Request $request, Course $course)
+    {
+        return Inertia::render('Front/Course/Show', [
+            'course' => $course,
+        ]);
+    }
+
     public function index()
     {
         return Inertia::render('Admin/Course/Index', [
