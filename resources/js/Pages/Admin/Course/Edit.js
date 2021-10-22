@@ -1,46 +1,35 @@
 import Authenticated from '@/Layouts/Authenticated';
-import React, { useRef } from 'react';
+import React, {useState} from 'react';
 
-import { useForm } from '@inertiajs/inertia-react'
-import CourseFields from '../../../Components/Admin/Course/CourseFields';
-import Button from '@/Components/Button';
-import ModuleTable from '../../../Components/Admin/Module/ModuleTable';
-import LinkButton from '@/Components/LinkButton';
-import ValidationErrors from '@/Components/ValidationErrors';
+import EditForm from '@/Components/Admin/Course/EditForm';
+import Modules from '@/Components/Admin/Course/Modules';
+import Users from '@/Components/Admin/Course/Users';
 
-const Index = ({course, modules, auth, errors}) => {
-    const { data, setData, put, transform, errors: formErrors } = useForm({
-        title: course.title
-    });
+const Index = ({course, modules, users, auth, errors}) => {
+    let [currentTab, setCurrentTab] = useState('');
 
-    let editorRef = useRef(null);
-
-    transform(data => ({
-        ...data,
-        content: editorRef.current.getContent()
-    }));
+    let content = <EditForm course={course}/>;
+    if(currentTab === 'modules') {
+        content = <Modules course={course} modules={modules} />
+    } else if(currentTab === 'users') {
+        content = <Users course={course} users={users}/>
+    }
 
     return (
         <Authenticated
             auth={auth}
             errors={errors}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Edit {course.title}</h2>}>
-            <form
-            className="mb-8"
-            onSubmit={e => {
-                e.preventDefault();
-                put(route('course.update', course));
-            }}>
-                <ValidationErrors errors={formErrors} />
-                <CourseFields form={data} setData={setData} content={course.content} editorRef={editorRef}/>
-                <Button className="mt-4">
-                    Save Changes
-                </Button>
-            </form>
 
-            <h2 className="text-3xl font-bold leading-none mb-2">Modules</h2>
-            <LinkButton href={route('course.module.create', course)} className="mb-2">Add Module</LinkButton>
-            <ModuleTable modules={modules} course={course}/>
+            <div className="mb-6 flex items-center gap-4 flex-wrap">
+                <button onClick={() => setCurrentTab('content')}>Content</button>
+                <button onClick={() => setCurrentTab('modules')}>Modules</button>
+                <button onClick={() => setCurrentTab('users')}>Users</button>
+            </div>
+            
+            {content}
+
+            
         </Authenticated>
     )
 }

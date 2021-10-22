@@ -24,6 +24,7 @@ class CourseController extends Controller
         return Inertia::render('Admin/Course/Edit', [
             'course' => $course,
             'modules' => $course->modules,
+            'users' => $course->users
         ]);
     }
 
@@ -43,7 +44,7 @@ class CourseController extends Controller
     {
         $course->update($request->all());
 
-        return Redirect::route('course.index');
+        return Redirect::route('course.edit', $course);
     }
 
     public function destroy(Request $request, Course $course)

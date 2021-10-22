@@ -3941,6 +3941,69 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/Components/Admin/Course/AddUserForm.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/Components/Admin/Course/AddUserForm.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/ValidationErrors */ "./resources/js/Components/ValidationErrors.js");
+/* harmony import */ var _Components_Label__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Label */ "./resources/js/Components/Label.js");
+/* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.js");
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(_ref) {
+  var course = _ref.course;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    email: ''
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      post = _useForm.post,
+      formErrors = _useForm.errors;
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+    onSubmit: function onSubmit(e) {
+      e.preventDefault();
+      post(route('course.user.store', course));
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      errors: formErrors
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Label__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      forInput: "email"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      name: "email",
+      type: "email",
+      placeholder: "User's email",
+      value: data.email,
+      handleChange: function handleChange(e) {
+        return setData('email', e.target.value);
+      }
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      className: "mt-4",
+      children: "Add User"
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Components/Admin/Course/CourseFields.js":
 /*!**************************************************************!*\
   !*** ./resources/js/Components/Admin/Course/CourseFields.js ***!
@@ -4084,6 +4147,221 @@ var CourseTable = function CourseTable(_ref) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CourseTable);
+
+/***/ }),
+
+/***/ "./resources/js/Components/Admin/Course/CourseUserTable.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Components/Admin/Course/CourseUserTable.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(_ref) {
+  var course = _ref.course,
+      users = _ref.users;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({}),
+      destroy = _useForm["delete"];
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+    className: "table",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+          children: "Email"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {})]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tbody", {
+      children: [(!users || !users.length) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tr", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+          colSpan: "2",
+          children: "No users yet."
+        })
+      }), users.map(function (user) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+            children: user.email
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
+              onSubmit: function onSubmit(e) {
+                e.preventDefault();
+                destroy(route('course.user.destroy', {
+                  course: course,
+                  user: user
+                }));
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                children: "Remove"
+              })
+            })
+          })]
+        }, user.id);
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Admin/Course/EditForm.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/Components/Admin/Course/EditForm.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _CourseFields__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CourseFields */ "./resources/js/Components/Admin/Course/CourseFields.js");
+/* harmony import */ var _Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/ValidationErrors */ "./resources/js/Components/ValidationErrors.js");
+/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(_ref) {
+  var course = _ref.course;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    title: course.title
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      put = _useForm.put,
+      transform = _useForm.transform,
+      formErrors = _useForm.errors;
+
+  var editorRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  transform(function (data) {
+    return _objectSpread(_objectSpread({}, data), {}, {
+      content: editorRef.current.getContent()
+    });
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+    className: "mb-8",
+    onSubmit: function onSubmit(e) {
+      e.preventDefault();
+      put(route('course.update', course));
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      errors: formErrors
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_CourseFields__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      form: data,
+      setData: setData,
+      content: course.content,
+      editorRef: editorRef
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      className: "mt-4",
+      children: "Save Changes"
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Admin/Course/Modules.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/Components/Admin/Course/Modules.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Components_LinkButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/LinkButton */ "./resources/js/Components/LinkButton.js");
+/* harmony import */ var _Module_ModuleTable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Module/ModuleTable */ "./resources/js/Components/Admin/Module/ModuleTable.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(_ref) {
+  var course = _ref.course,
+      modules = _ref.modules;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+      children: "Modules"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_LinkButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      href: route('course.module.create', course),
+      className: "mb-2",
+      children: "Add Module"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Module_ModuleTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      modules: modules,
+      course: course
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Admin/Course/Users.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/Components/Admin/Course/Users.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _AddUserForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddUserForm */ "./resources/js/Components/Admin/Course/AddUserForm.js");
+/* harmony import */ var _CourseUserTable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CourseUserTable */ "./resources/js/Components/Admin/Course/CourseUserTable.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(_ref) {
+  var course = _ref.course,
+      users = _ref.users;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+      children: "Users"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_AddUserForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      course: course
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_CourseUserTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      course: course,
+      users: users
+    })]
+  });
+}
 
 /***/ }),
 
@@ -5434,21 +5712,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Authenticated */ "./resources/js/Layouts/Authenticated.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _Components_Admin_Course_CourseFields__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Components/Admin/Course/CourseFields */ "./resources/js/Components/Admin/Course/CourseFields.js");
-/* harmony import */ var _Components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Button */ "./resources/js/Components/Button.js");
-/* harmony import */ var _Components_Admin_Module_ModuleTable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Components/Admin/Module/ModuleTable */ "./resources/js/Components/Admin/Module/ModuleTable.js");
-/* harmony import */ var _Components_LinkButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/LinkButton */ "./resources/js/Components/LinkButton.js");
-/* harmony import */ var _Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Components/ValidationErrors */ "./resources/js/Components/ValidationErrors.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+/* harmony import */ var _Components_Admin_Course_EditForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Admin/Course/EditForm */ "./resources/js/Components/Admin/Course/EditForm.js");
+/* harmony import */ var _Components_Admin_Course_Modules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Admin/Course/Modules */ "./resources/js/Components/Admin/Course/Modules.js");
+/* harmony import */ var _Components_Admin_Course_Users__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Admin/Course/Users */ "./resources/js/Components/Admin/Course/Users.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -5461,59 +5739,57 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var Index = function Index(_ref) {
   var course = _ref.course,
       modules = _ref.modules,
+      users = _ref.users,
       auth = _ref.auth,
       errors = _ref.errors;
 
-  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.useForm)({
-    title: course.title
-  }),
-      data = _useForm.data,
-      setData = _useForm.setData,
-      put = _useForm.put,
-      transform = _useForm.transform,
-      formErrors = _useForm.errors;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      currentTab = _useState2[0],
+      setCurrentTab = _useState2[1];
 
-  var editorRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
-  transform(function (data) {
-    return _objectSpread(_objectSpread({}, data), {}, {
-      content: editorRef.current.getContent()
-    });
+  var content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Admin_Course_EditForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    course: course
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_0__["default"], {
+
+  if (currentTab === 'modules') {
+    content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Admin_Course_Modules__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      course: course,
+      modules: modules
+    });
+  } else if (currentTab === 'users') {
+    content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_Admin_Course_Users__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      course: course,
+      users: users
+    });
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_0__["default"], {
     auth: auth,
     errors: errors,
-    header: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("h2", {
+    header: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h2", {
       className: "font-semibold text-xl text-gray-800 leading-tight",
       children: ["Edit ", course.title]
     }),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
-      className: "mb-8",
-      onSubmit: function onSubmit(e) {
-        e.preventDefault();
-        put(route('course.update', course));
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        errors: formErrors
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Admin_Course_CourseFields__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        form: data,
-        setData: setData,
-        content: course.content,
-        editorRef: editorRef
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        className: "mt-4",
-        children: "Save Changes"
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "mb-6 flex items-center gap-4 flex-wrap",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        onClick: function onClick() {
+          return setCurrentTab('content');
+        },
+        children: "Content"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        onClick: function onClick() {
+          return setCurrentTab('modules');
+        },
+        children: "Modules"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+        onClick: function onClick() {
+          return setCurrentTab('users');
+        },
+        children: "Users"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h2", {
-      className: "text-3xl font-bold leading-none mb-2",
-      children: "Modules"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_LinkButton__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      href: route('course.module.create', course),
-      className: "mb-2",
-      children: "Add Module"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_Admin_Module_ModuleTable__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      modules: modules,
-      course: course
-    })]
+    }), content]
   });
 };
 

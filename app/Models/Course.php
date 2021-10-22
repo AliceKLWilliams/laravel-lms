@@ -27,4 +27,27 @@ class Course extends Model
     {
         return $this->hasMany(Module::class);
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function addUser($email)
+    {
+        $user = User::where('email', $email)->first();
+
+        if (!$user) {
+            return;
+        }
+
+        if ($this->users()->where('users.id', $user->id)->doesntExist()){
+            $this->users()->attach($user);
+        }
+    }
+
+    public function removeUser($user)
+    {
+        $this->users()->detach($user->id);
+    }
 }
