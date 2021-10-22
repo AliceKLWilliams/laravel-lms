@@ -22,7 +22,7 @@ export default function({course}) {
             className="mb-8"
             onSubmit={e => {
                 e.preventDefault();
-                put(route('course.update', course));
+                put(route('admin.course.update', course));
             }}>
             <ValidationErrors errors={formErrors} />
             <CourseFields form={data} setData={setData} content={course.content} editorRef={editorRef}/>

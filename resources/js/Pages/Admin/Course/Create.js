@@ -21,7 +21,7 @@ const Create = ({auth, errors}) => {
 		<Authenticated auth={auth} errors={errors} header={<h2>Create Course</h2>}>
 			<form onSubmit={(e) => {
 				e.preventDefault();
-				post(route('course.store'));
+				post(route('admin.course.store'));
 			}}>
 				<ValidationErrors errors={formErrors} />
 

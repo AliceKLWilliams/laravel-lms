@@ -26,7 +26,7 @@ export default function({auth, errors, course}) {
 			header={<h2>Create a new module</h2>}>
 				<form onSubmit={e => {
 					e.preventDefault();
-					post(route('course.module.store', course))
+					post(route('admin.course.module.store', course))
 				}}>
 					<ValidationErrors errors={formErrors} />
 					<ModuleFields form={data} setData={setData} editorRef={editorRef}/>

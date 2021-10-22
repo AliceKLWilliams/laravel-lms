@@ -9,7 +9,7 @@ const Index = ({courses, auth, errors}) => {
             auth={auth}
             errors={errors}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Courses</h2>}>
-                <LinkButton href={route('course.create')} className="mb-4">Create Course</LinkButton>
+                <LinkButton href={route('admin.course.create')} className="mb-4">Create Course</LinkButton>
             <CourseTable courses={courses} />
         </Authenticated>
     )

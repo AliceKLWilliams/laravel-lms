@@ -3981,7 +3981,7 @@ __webpack_require__.r(__webpack_exports__);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
     onSubmit: function onSubmit(e) {
       e.preventDefault();
-      post(route('course.user.store', course));
+      post(route('admin.course.user.store', course));
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_2__["default"], {
       errors: formErrors
@@ -4110,7 +4110,7 @@ var CourseTable = function CourseTable(_ref) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("td", {
           colSpan: "3",
           children: ["No courses. ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-            href: route('course.create'),
+            href: route('admin.course.create'),
             children: "Create a course"
           })]
         })
@@ -4124,15 +4124,15 @@ var CourseTable = function CourseTable(_ref) {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "flex flex-wrap gap-4 items-center",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                href: route('courses.show', course),
+                href: route('course.show', course),
                 children: "View"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                href: route('course.edit', course),
+                href: route('admin.course.edit', course),
                 children: "Edit"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
                 onSubmit: function onSubmit(e) {
                   e.preventDefault();
-                  destroy(route('course.destroy', course));
+                  destroy(route('admin.course.destroy', course));
                 },
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_0__["default"], {
                   children: "Delete"
@@ -4199,7 +4199,7 @@ __webpack_require__.r(__webpack_exports__);
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("form", {
               onSubmit: function onSubmit(e) {
                 e.preventDefault();
-                destroy(route('course.user.destroy', {
+                destroy(route('admin.course.user.destroy', {
                   course: course,
                   user: user
                 }));
@@ -4269,7 +4269,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     className: "mb-8",
     onSubmit: function onSubmit(e) {
       e.preventDefault();
-      put(route('course.update', course));
+      put(route('admin.course.update', course));
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_3__["default"], {
       errors: formErrors
@@ -4315,7 +4315,7 @@ __webpack_require__.r(__webpack_exports__);
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
       children: "Modules"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_LinkButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      href: route('course.module.create', course),
+      href: route('admin.course.module.create', course),
       className: "mb-2",
       children: "Add Module"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Module_ModuleTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -4484,7 +4484,7 @@ __webpack_require__.r(__webpack_exports__);
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "flex flex-wrap gap-4 items-center",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
-                href: route('course.module.lesson.edit', {
+                href: route('admin.course.module.lesson.edit', {
                   course: course,
                   module: module,
                   lesson: lesson
@@ -4493,7 +4493,7 @@ __webpack_require__.r(__webpack_exports__);
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
                 onSubmit: function onSubmit(e) {
                   e.preventDefault();
-                  destroy(route('course.module.lesson.destroy', {
+                  destroy(route('admin.course.module.lesson.destroy', {
                     course: course,
                     module: module,
                     lesson: lesson
@@ -4631,7 +4631,7 @@ __webpack_require__.r(__webpack_exports__);
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "flex flex-wrap gap-4 items-center",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
-                href: route('course.module.edit', {
+                href: route('admin.course.module.edit', {
                   course: course,
                   module: module
                 }),
@@ -4639,7 +4639,7 @@ __webpack_require__.r(__webpack_exports__);
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("form", {
                 onSubmit: function onSubmit(e) {
                   e.preventDefault();
-                  destroy(route('course.module.destroy', {
+                  destroy(route('admin.course.module.destroy', {
                     course: course,
                     module: module
                   }));
@@ -4934,7 +4934,7 @@ __webpack_require__.r(__webpack_exports__);
       children: course.title
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
       className: "underline",
-      href: route('courses.show', course),
+      href: route('course.show', course),
       children: "View Course"
     })]
   });
@@ -4976,7 +4976,7 @@ __webpack_require__.r(__webpack_exports__);
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
         children: [lesson.title, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
           className: "underline",
-          href: route('courses.modules.lessons.show', {
+          href: route('course.module.lesson.show', {
             course: course,
             module: module,
             lesson: lesson
@@ -5023,7 +5023,7 @@ __webpack_require__.r(__webpack_exports__);
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
         children: [module.title, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
           className: "underline",
-          href: route('courses.modules.show', {
+          href: route('course.module.show', {
             course: course,
             module: module
           }),
@@ -5070,7 +5070,7 @@ __webpack_require__.r(__webpack_exports__);
           className: "flex items-center gap-4",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-              href: "#",
+              href: route('course.index'),
               children: "Courses"
             })
           }), !auth.user && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
@@ -5425,12 +5425,12 @@ function Authenticated(_ref) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
               className: "hidden space-x-8 sm:-my-px sm:ml-10 sm:flex",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                href: route('course.index'),
-                active: route().current('course.index'),
+                href: route('admin.course.index'),
+                active: route().current('admin.course.index'),
                 children: "Courses"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
-                href: route('user.index'),
-                active: route().current('user.index'),
+                href: route('admin.user.index'),
+                active: route().current('admin.user.index'),
                 children: "Users"
               })]
             })]
@@ -5676,7 +5676,7 @@ var Create = function Create(_ref) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
       onSubmit: function onSubmit(e) {
         e.preventDefault();
-        post(route('course.store'));
+        post(route('admin.course.store'));
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__["default"], {
         errors: formErrors
@@ -5829,7 +5829,7 @@ var Index = function Index(_ref) {
       children: "Courses"
     }),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_LinkButton__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      href: route('course.create'),
+      href: route('admin.course.create'),
       className: "mb-4",
       children: "Create Course"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Admin_Course_CourseTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -5905,7 +5905,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
       onSubmit: function onSubmit(e) {
         e.preventDefault();
-        post(route('course.module.lesson.store', {
+        post(route('admin.course.module.lesson.store', {
           course: course,
           module: module
         }));
@@ -5990,7 +5990,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       className: "mb-8",
       onSubmit: function onSubmit(e) {
         e.preventDefault();
-        put(route('course.module.lesson.update', {
+        put(route('admin.course.module.lesson.update', {
           course: course,
           module: module,
           lesson: lesson
@@ -6075,7 +6075,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
       onSubmit: function onSubmit(e) {
         e.preventDefault();
-        post(route('course.module.store', course));
+        post(route('admin.course.module.store', course));
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_5__["default"], {
         errors: formErrors
@@ -6161,7 +6161,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       className: "mb-8",
       onSubmit: function onSubmit(e) {
         e.preventDefault();
-        put(route('course.module.update', {
+        put(route('admin.course.module.update', {
           course: course,
           module: module
         }));
@@ -6181,7 +6181,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       className: "text-3xl font-bold mb-4",
       children: "Lessons"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_LinkButton__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      href: route('course.module.lesson.create', {
+      href: route('admin.course.module.lesson.create', {
         course: course,
         module: module
       }),
@@ -6251,7 +6251,7 @@ var Create = function Create(_ref) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
       onSubmit: function onSubmit(e) {
         e.preventDefault();
-        post(route('user.store'));
+        post(route('admin.user.store'));
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_ValidationErrors__WEBPACK_IMPORTED_MODULE_4__["default"], {
         errors: formErrors
@@ -6354,7 +6354,7 @@ var Index = function Index(_ref) {
       children: "Users"
     }),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_LinkButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      href: route('user.create'),
+      href: route('admin.user.create'),
       className: "mb-4",
       children: "Add User"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Users_UsersTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -7145,10 +7145,10 @@ __webpack_require__.r(__webpack_exports__);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
-        href: route('courses.show', course),
+        href: route('course.show', course),
         children: course.title
       }), " ", '>', " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
-        href: route('courses.modules.show', {
+        href: route('course.module.show', {
           course: course,
           module: module
         }),
@@ -7195,7 +7195,7 @@ __webpack_require__.r(__webpack_exports__);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
-        href: route('courses.show', course),
+        href: route('course.show', course),
         children: course.title
       }), " ", '>', " ", module.title]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {

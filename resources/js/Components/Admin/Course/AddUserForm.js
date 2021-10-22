@@ -15,7 +15,7 @@ export default function({course}) {
         <form
             onSubmit={e => {
                 e.preventDefault();
-                post(route('course.user.store', course));
+                post(route('admin.course.user.store', course));
             }}
         >
             <ValidationErrors errors={formErrors} />

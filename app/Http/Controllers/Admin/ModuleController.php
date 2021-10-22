@@ -31,7 +31,7 @@ class ModuleController extends Controller
 
         $course->modules()->save($module);
 
-        return Redirect::route('course.edit', $course);
+        return Redirect::route('admin.course.edit', $course);
     }
 
     public function edit(Request $request, Course $course, Module $module)
@@ -47,13 +47,13 @@ class ModuleController extends Controller
     {
         $module->update($request->all());
 
-        return Redirect::route('course.edit', $course);
+        return Redirect::route('admin.course.edit', $course);
     }
 
     public function destroy(Request $request, Course $course, Module $module)
     {
         $module->delete();
 
-        return Redirect::route('course.edit', $course);
+        return Redirect::route('admin.course.edit', $course);
     }
 }

@@ -16,7 +16,7 @@ const CourseTable = ({courses}) => {
                 </tr>
             </thead>
             <tbody>
-                {!courses.length && <tr><td colSpan="3">No courses. <Link href={route('course.create')}>Create a course</Link></td></tr>}
+                {!courses.length && <tr><td colSpan="3">No courses. <Link href={route('admin.course.create')}>Create a course</Link></td></tr>}
 
                 {courses.map(course => (
                     <tr key={course.id}>
@@ -24,13 +24,13 @@ const CourseTable = ({courses}) => {
                         <td>{dayjs(course.created_at).format('DD/MM/YYYY')}</td>
                         <td>
                             <div className="flex flex-wrap gap-4 items-center">
-                                <Link href={route('courses.show', course)}>View</Link>
-                                <Link href={route('course.edit', course)}>
+                                <Link href={route('course.show', course)}>View</Link>
+                                <Link href={route('admin.course.edit', course)}>
                                     Edit
                                 </Link>
                                 <form onSubmit={e => {
                                     e.preventDefault();
-                                    destroy(route('course.destroy', course));
+                                    destroy(route('admin.course.destroy', course));
                                 }}>
                                     <Button>Delete</Button>
                                 </form>

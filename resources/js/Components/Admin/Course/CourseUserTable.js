@@ -23,7 +23,7 @@ export default function({course, users}) {
 						<td>
                             <form onSubmit={e => {
                                 e.preventDefault();
-                                destroy(route('course.user.destroy', {
+                                destroy(route('admin.course.user.destroy', {
                                     course,
                                     user
                                 }));

@@ -25,7 +25,7 @@ export default function({modules, course}) {
 						<td>{dayjs(module.created_at).format('DD/MM/YYYY')}</td>
 						<td>
 							<div className="flex flex-wrap gap-4 items-center">
-								<Link href={route('course.module.edit', {
+								<Link href={route('admin.course.module.edit', {
 									course,
 									module
 								})}>
@@ -33,7 +33,7 @@ export default function({modules, course}) {
                                 </Link>
                                 <form onSubmit={e => {
                                     e.preventDefault();
-                                    destroy(route('course.module.destroy', {
+                                    destroy(route('admin.course.module.destroy', {
 										course,
 										module
 									}));

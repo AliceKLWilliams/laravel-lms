@@ -25,7 +25,7 @@ export default function({auth, errors, course, module}) {
 			header={<h2>Create a new lesson</h2>}>
 				<form onSubmit={e => {
 					e.preventDefault();
-					post(route('course.module.lesson.store', {
+					post(route('admin.course.module.lesson.store', {
                         course,
                         module
                     }))

@@ -33,7 +33,7 @@ class LessonController extends Controller
 
         $module->lessons()->save($lesson);
 
-        return Redirect::route('course.module.edit', [
+        return Redirect::route('admin.course.module.edit', [
             'course' => $course,
             'module' => $module
         ]);
@@ -52,7 +52,7 @@ class LessonController extends Controller
     {
         $lesson->update($request->all());
 
-        return Redirect::route('course.module.edit', [
+        return Redirect::route('admin.course.module.edit', [
             'course' => $course,
             'module' => $module
         ]);
@@ -62,7 +62,7 @@ class LessonController extends Controller
     {
         $lesson->delete();
 
-        return Redirect::route('course.module.edit', [
+        return Redirect::route('admin.course.module.edit', [
             'course' => $course,
             'module' => $module
         ]);

@@ -18,13 +18,13 @@ class CourseUserController extends Controller
 
         $course->addUser($request->get('email'));
 
-        return Redirect::route('course.edit', $course);
+        return Redirect::route('admin.course.edit', $course);
     }
 
     public function destroy(Request $request, Course $course, User $user)
     {
         $course->removeUser($user);
 
-        return Redirect::route('course.edit', $course);
+        return Redirect::route('admin.course.edit', $course);
     }
 }

@@ -29,7 +29,7 @@ export default ({course, module, lessons, auth, errors}) => {
                 className="mb-8"
                 onSubmit={e => {
                     e.preventDefault();
-                    put(route('course.module.update', {
+                    put(route('admin.course.module.update', {
                         course,
                         module
                     }));
@@ -42,7 +42,7 @@ export default ({course, module, lessons, auth, errors}) => {
             </form>
 
             <h2 className="text-3xl font-bold mb-4">Lessons</h2>
-            <LinkButton href={route('course.module.lesson.create', {
+            <LinkButton href={route('admin.course.module.lesson.create', {
                 course,
                 module
             })}>Add Lesson</LinkButton>

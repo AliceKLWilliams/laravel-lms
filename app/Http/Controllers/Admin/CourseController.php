@@ -37,20 +37,20 @@ class CourseController extends Controller
     {
         Course::create($request->all());
 
-        return Redirect::route('course.index');
+        return Redirect::route('admin.course.index');
     }
 
     public function update(UpdateCourseRequest $request, Course $course)
     {
         $course->update($request->all());
 
-        return Redirect::route('course.edit', $course);
+        return Redirect::route('admin.course.edit', $course);
     }
 
     public function destroy(Request $request, Course $course)
     {
         $course->delete();
 
-        return Redirect::route('course.index');
+        return Redirect::route('admin.course.index');
     }
 }

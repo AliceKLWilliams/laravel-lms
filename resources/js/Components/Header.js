@@ -4,7 +4,6 @@ import { Link } from '@inertiajs/inertia-react';
 
 import ApplicationLogo from './ApplicationLogo';
 
-
 export default function() {
 
     const { auth } = usePage().props
@@ -16,7 +15,7 @@ export default function() {
 
                 <nav>
                     <ul className="flex items-center gap-4">
-                        <li><Link href="#">Courses</Link></li>
+                        <li><Link href={route('course.index')}>Courses</Link></li>
                         {!auth.user && <li><Link href={route('login')}>Login</Link></li>}
                         {auth.user && <li><Link method="post" href={route('logout')}>Logout</Link></li>}
                     </ul>

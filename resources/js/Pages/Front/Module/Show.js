@@ -6,7 +6,7 @@ import LessonList from '@/Components/Front/Lesson/LessonList';
 export default function({course, module, lessons}){
     return (
         <Layout>
-            <p><Link href={route('courses.show', course)}>{course.title}</Link> {'>'} {module.title}</p>
+            <p><Link href={route('course.show', course)}>{course.title}</Link> {'>'} {module.title}</p>
             <h1>{module.title}</h1>
             <div dangerouslySetInnerHTML={{__html: module.content}}></div>
 

@@ -20,7 +20,7 @@ const Create = ({auth, errors, userRoles}) => {
 		<Authenticated auth={auth} errors={errors} header={<h2>Create User</h2>}>
 			<form onSubmit={(e) => {
 				e.preventDefault();
-				post(route('user.store'));
+				post(route('admin.user.store'));
 			}}>
 				<ValidationErrors errors={formErrors} />
 

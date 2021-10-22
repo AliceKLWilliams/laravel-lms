@@ -9,7 +9,7 @@ export default function({modules, course}){
     return (
         <ul>
             {modules.map(module => (
-                <li>{module.title} <Link className="underline" href={route('courses.modules.show', {
+                <li>{module.title} <Link className="underline" href={route('course.module.show', {
                     course,
                     module
                 })}>View Module</Link></li>

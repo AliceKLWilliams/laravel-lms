@@ -27,7 +27,7 @@ export default ({course, module, lesson, auth, errors}) => {
                 className="mb-8"
                 onSubmit={e => {
                     e.preventDefault();
-                    put(route('course.module.lesson.update', {
+                    put(route('admin.course.module.lesson.update', {
                         course,
                         module,
                         lesson

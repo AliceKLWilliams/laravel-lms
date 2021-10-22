@@ -6,7 +6,7 @@ export default function({course, modules}) {
     return (
         <>
             <h2>Modules</h2>
-            <LinkButton href={route('course.module.create', course)} className="mb-2">Add Module</LinkButton>
+            <LinkButton href={route('admin.course.module.create', course)} className="mb-2">Add Module</LinkButton>
             <ModuleTable modules={modules} course={course}/>
         </>
     )

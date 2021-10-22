@@ -25,12 +25,12 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::resource('/courses', App\Http\Controllers\Front\CourseController::class)->only(['index', 'show']);
-Route::resource('courses.modules', App\Http\Controllers\Front\ModuleController::class)->only(['show']);
-Route::resource('courses.modules.lessons', App\Http\Controllers\Front\LessonController::class)->only(['show']);
+Route::resource('course', App\Http\Controllers\Front\CourseController::class)->only(['index', 'show']);
+Route::resource('course.course', App\Http\Controllers\Front\ModuleController::class)->only(['show']);
+Route::resource('course.module.lesson', App\Http\Controllers\Front\LessonController::class)->only(['show']);
 
-Route::prefix('admin')->middleware(['auth', 'verified', 'isAdmin'])->group(function () {
-    Route::resource('/course', App\Http\Controllers\Admin\CourseController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified', 'isAdmin'])->group(function () {
+    Route::resource('course', App\Http\Controllers\Admin\CourseController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
     Route::resource('course.module', App\Http\Controllers\Admin\ModuleController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
     Route::resource('course.module.lesson', App\Http\Controllers\Admin\LessonController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
 

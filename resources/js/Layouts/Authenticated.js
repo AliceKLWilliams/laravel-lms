@@ -21,11 +21,11 @@ export default function Authenticated({ auth, header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={route('course.index')} active={route().current('course.index')}>
+                                <NavLink href={route('admin.course.index')} active={route().current('admin.course.index')}>
                                     Courses
                                 </NavLink>
 
-                                <NavLink href={route('user.index')} active={route().current('user.index')}>
+                                <NavLink href={route('admin.user.index')} active={route().current('admin.user.index')}>
                                     Users
                                 </NavLink>
                             </div>

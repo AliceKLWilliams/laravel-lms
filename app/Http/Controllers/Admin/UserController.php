@@ -33,6 +33,6 @@ class UserController extends Controller
 
         User::create($request->all());
 
-        return Redirect::route('user.index');
+        return Redirect::route('admin.user.index');
     }
 }
