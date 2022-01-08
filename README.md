@@ -22,7 +22,7 @@ A Learner Management System created in Laravel. This project was started due to 
 - Users can create their own accounts
 - Admins can create other users (Admins or Students)
 - Admins can assign users to courses
-- User's can view their assigned courses on a My Courses page
+- Users can view their assigned courses on a My Courses page
 
 ## Technlogies Used
 - Laravel
