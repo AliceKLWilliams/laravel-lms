@@ -12,6 +12,8 @@ class ModuleController extends Controller
 {
     public function show(Request $request, Course $course, Module $module)
     {
+        $this->authorize('view', $module);
+
         return Inertia::render('Front/Module/Show', [
             'course' => $course,
             'module' => $module,

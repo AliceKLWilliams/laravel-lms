@@ -9,7 +9,7 @@ export default function({course, module, lessons}){
     return (
         <ul>
             {lessons.map(lesson => (
-                <li>{lesson.title} <Link className="underline" href={route('course.module.lesson.show', {course, module, lesson})}>View Lesson</Link></li>
+                <li key={lesson.id}>{lesson.title} <Link className="underline" href={route('course.module.lesson.show', {course, module, lesson})}>View Lesson</Link></li>
             ))}
         </ul>
     )
