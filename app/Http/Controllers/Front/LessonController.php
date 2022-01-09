@@ -13,6 +13,8 @@ class LessonController extends Controller
 {
     public function show(Request $request, Course $course, Module $module, Lesson $lesson)
     {
+        $this->authorize('view', $lesson);
+
         return Inertia::render('Front/Lesson/Show', [
             'course' => $course,
             'module' => $module,
