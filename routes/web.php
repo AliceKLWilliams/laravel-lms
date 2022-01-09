@@ -25,7 +25,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::middleware(['auth'])->group(function() {
-    Route::resource('course', App\Http\Controllers\Front\CourseController::class)->only(['index', 'show']);
+    Route::resource('course', App\Http\Controllers\Front\CourseController::class)->only(['show']);
     Route::resource('course.module', App\Http\Controllers\Front\ModuleController::class)->only(['show']);
     Route::resource('course.module.lesson', App\Http\Controllers\Front\LessonController::class)->only(['show']);
     Route::get('/my-courses', [App\Http\Controllers\Front\MyCoursesController::class, 'show'])->name('my-courses');
