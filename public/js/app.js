@@ -5073,6 +5073,12 @@ __webpack_require__.r(__webpack_exports__);
               href: route('my-courses'),
               children: "My Courses"
             })
+          }), auth.user && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+            href: "/logout",
+            method: "post",
+            as: "button",
+            type: "button",
+            children: "Logout"
           }), !auth.user && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
               href: route('login'),

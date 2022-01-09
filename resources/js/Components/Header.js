@@ -16,6 +16,7 @@ export default function() {
                 <nav>
                     <ul className="flex items-center gap-4">
                         <li><Link href={route('my-courses')}>My Courses</Link></li>
+                        {auth.user && <Link href="/logout" method="post" as="button" type="button">Logout</Link>}
                         {!auth.user && <li><Link href={route('login')}>Login</Link></li>}
                     </ul>
                 </nav>
