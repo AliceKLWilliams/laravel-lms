@@ -32159,47 +32159,43 @@ select {
   text-align: left;
 }
 
-h1, .h1 {
-  margin-bottom: 1.5rem;
-  font-size: 3rem;
-  line-height: 1;
-  font-weight: 700;
-}
-
-h2, .h2 {
-  margin-bottom: 0.5rem;
+.front h1, .front .h1 {
+  margin-bottom: 1rem;
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 700;
 }
 
-h3, .h3 {
-  margin-bottom: 0.5rem;
+.front h2, .front .h2 {
+  margin-bottom: 0.75rem;
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 700;
 }
 
-h4, .h4 {
+.front h3, .front .h3 {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
 }
 
-h5, .h5 {
+.front h4, .front .h4 {
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 700;
 }
 
-p {
-  margin-bottom: 1.5rem;
+.front h5, .front .h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
 }
 
-a {
-  text-decoration: underline;
+p {
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 640px) {

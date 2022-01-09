@@ -22,7 +22,7 @@ export default ({course, module, lesson, auth, errors}) => {
         <Authenticated
             auth={auth}
             errors={errors}
-            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Edit {lesson.title}</h2>}>
+            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Edit - {lesson.title}</h2>}>
             <form
                 className="mb-8"
                 onSubmit={e => {

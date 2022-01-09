@@ -15,35 +15,33 @@
 	@apply py-4 px-5 text-left;
 }
 
-h1,
-.h1 {
-	@apply text-5xl font-bold mb-6;
-}
-
-h2,
-.h2 {
-	@apply text-4xl font-bold mb-2;
-}
-
-h3,
-.h3 {
-	@apply text-3xl font-bold mb-2;
-}
-
-h4,
-.h4 {
-	@apply text-2xl font-bold mb-2;
-}
-
-h5,
-.h5 {
-	@apply text-xl font-bold mb-2;
+.front {
+	h1,
+	.h1 {
+		@apply text-4xl font-bold mb-4;
+	}
+	
+	h2,
+	.h2 {
+		@apply text-3xl font-bold mb-3;
+	}
+	
+	h3,
+	.h3 {
+		@apply text-2xl font-bold mb-2;
+	}
+	
+	h4,
+	.h4 {
+		@apply text-xl font-bold mb-2;
+	}
+	
+	h5,
+	.h5 {
+		@apply text-lg font-bold mb-2;
+	}
 }
 
 p {
 	@apply mb-6;
-}
-
-a {
-	@apply underline;
 }

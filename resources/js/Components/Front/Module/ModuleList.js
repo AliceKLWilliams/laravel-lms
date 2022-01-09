@@ -9,10 +9,13 @@ export default function({modules, course}) {
     return (
         <ul>
             {modules.map(module => (
-                <li key={module.id}>{module.title} <Link className="underline" href={route('course.module.show', {
-                    course,
-                    module
-                })}>View Module</Link></li>
+                <li className='flex justify-between gap-4' key={module.id}>
+                    {module.title} 
+                    <Link href={route('course.module.show', {
+                        course,
+                        module
+                    })}>View Module</Link>
+                </li>
             ))}
         </ul>
     )

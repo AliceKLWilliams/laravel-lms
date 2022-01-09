@@ -6,7 +6,7 @@ const Layout = ({children}) => {
         <>
            <Header />
 
-            <main className="p-4">
+            <main className="px-4 py-8 front">
                 <div className="max-w-5xl mx-auto">
                     {children}
                 </div>
