@@ -1,8 +1,11 @@
 <?php
 
+use GuzzleHttp\Psr7\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +19,18 @@ use Illuminate\Foundation\Application;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-})->name('home');
+    if (!auth()->check()) {
+        return Redirect::route('login');
+    }
+
+    $user = Auth::user();
+
+    if ($user->isAdmin()) {
+        return Redirect::route('admin.course.index');
+    }
+
+    return Redirect::route('my-courses');
+});
 
 Route::middleware(['auth'])->group(function() {
     Route::resource('course', App\Http\Controllers\Front\CourseController::class)->only(['show']);

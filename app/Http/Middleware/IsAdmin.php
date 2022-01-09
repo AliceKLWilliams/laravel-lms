@@ -19,13 +19,13 @@ class IsAdmin
     public function handle(Request $request, Closure $next)
     {
         if (!auth()->check()) {
-            return Redirect::route('home');
+            return Redirect::route('login');
         }
 
         $user = Auth::user();
 
-        if ($user->userRole->name !== 'admin') {
-            return Redirect::route('home');
+        if (!$user->isAdmin()) {
+            return Redirect::route('my-courses');
         }
 
         return $next($request);
