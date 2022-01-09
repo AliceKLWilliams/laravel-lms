@@ -31,10 +31,10 @@ const Create = ({auth, errors, userRoles}) => {
                 <Input type="email" name="email" className="mb-2" required value={data.email} handleChange={(e) => setData('email', e.target.value)}/>
 
                 <Label htmlFor="password">Password</Label>
-                <Input type="password" name="password" required value={data.password} handleChange={(e) => setData('password', e.target.value)}/>
+                <Input type="password" name="password" className="mb-2" required value={data.password} handleChange={(e) => setData('password', e.target.value)}/>
 
                 <Label htmlFor="user_role_id">Role</Label>
-                <select name="user_role_id" required className="block" value={data.user_role_id} onChange={(e) => setData('user_role_id', e.target.value)}>
+                <select name="user_role_id" required className="block border-0" value={data.user_role_id} onChange={(e) => setData('user_role_id', e.target.value)}>
                     {userRoles.map(userRole => (
                         <option key={userRole.id} value={userRole.id}>{userRole.display_name}</option>
                     ))}

@@ -31,7 +31,8 @@ class UserController extends Controller
     {
         return Inertia::render('Admin/Users/Show', [
             'user' => $user,
-            'courses' => $user->courses
+            'courses' => $user->courses,
+            'role' => $user->userRole
         ]);
     }
 

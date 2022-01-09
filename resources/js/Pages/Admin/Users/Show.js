@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import Authenticated from '@/Layouts/Authenticated';
 import UserCoursesTable from '@/Components/Users/UserCoursesTable';
 
-const Show = ({user, courses, auth, errors}) => {
+const Show = ({user, courses, role, auth, errors}) => {
     return (
         <Authenticated
             auth={auth}
@@ -19,6 +19,11 @@ const Show = ({user, courses, auth, errors}) => {
 				<div>
 					<p className="font-bold mb-2">Email</p>
 					<p className="mb-0">{user.email}</p>
+				</div>
+
+				<div>
+					<p className="font-bold mb-2">Role</p>
+					<p className="mb-0">{role.display_name}</p>
 				</div>
 
 				<div>

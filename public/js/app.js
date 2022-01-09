@@ -6434,6 +6434,7 @@ var Create = function Create(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Components_Input__WEBPACK_IMPORTED_MODULE_5__["default"], {
         type: "password",
         name: "password",
+        className: "mb-2",
         required: true,
         value: data.password,
         handleChange: function handleChange(e) {
@@ -6445,7 +6446,7 @@ var Create = function Create(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("select", {
         name: "user_role_id",
         required: true,
-        className: "block",
+        className: "block border-0",
         value: data.user_role_id,
         onChange: function onChange(e) {
           return setData('user_role_id', e.target.value);
@@ -6543,6 +6544,7 @@ __webpack_require__.r(__webpack_exports__);
 var Show = function Show(_ref) {
   var user = _ref.user,
       courses = _ref.courses,
+      role = _ref.role,
       auth = _ref.auth,
       errors = _ref.errors;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layouts_Authenticated__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -6569,6 +6571,14 @@ var Show = function Show(_ref) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: "mb-0",
           children: user.email
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "font-bold mb-2",
+          children: "Role"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "mb-0",
+          children: role.display_name
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
