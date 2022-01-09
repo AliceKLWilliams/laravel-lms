@@ -11,7 +11,7 @@ export default function({course, users}) {
 			<thead>
 				<tr>
 					<td>Email</td>
-					<td></td>
+					<td>Actions</td>
 				</tr>
 			</thead>
 			<tbody>

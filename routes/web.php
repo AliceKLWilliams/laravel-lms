@@ -44,7 +44,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified', 'isAdmin
     Route::resource('course.module', App\Http\Controllers\Admin\ModuleController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
     Route::resource('course.module.lesson', App\Http\Controllers\Admin\LessonController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
 
-    Route::resource('user', App\Http\Controllers\Admin\UserController::class)->only(['index', 'create', 'store']);
+    Route::resource('user', App\Http\Controllers\Admin\UserController::class)->only(['index', 'create', 'store', 'show']);
 
     Route::resource('course.user', App\Http\Controllers\Admin\CourseUserController::class)->only(['store', 'destroy']);
 });

@@ -27,6 +27,14 @@ class UserController extends Controller
         ]);
     }
 
+    public function show(Request $request, User $user)
+    {
+        return Inertia::render('Admin/Users/Show', [
+            'user' => $user,
+            'courses' => $user->courses
+        ]);
+    }
+
     public function store(StoreUserRequest $request)
     {
         $request['password'] = Hash::make($request->get('password'));

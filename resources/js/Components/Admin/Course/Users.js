@@ -9,7 +9,9 @@ export default function({course, users}) {
         <>
             <h2>Users</h2>
 
-            <AddUserForm course={course} />
+            <div className='mb-4'>
+                <AddUserForm course={course} />
+            </div>
 
             <CourseUserTable course={course} users={users} />
         </>

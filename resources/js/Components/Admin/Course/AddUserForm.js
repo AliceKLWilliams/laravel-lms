@@ -19,11 +19,15 @@ export default function({course}) {
             }}
         >
             <ValidationErrors errors={formErrors} />
-            <Label forInput="email" />
-            <Input name="email" type="email" placeholder="User's email" value={data.email} handleChange={e => setData('email', e.target.value)}/>
-            <Button className="mt-4">
-                Add User
-            </Button>
+            <div className="flex items-end gap-4">
+                <div>
+                    <Label value="Email" forInput="email" />
+                    <Input id="email" name="email" type="email" placeholder="User's email" value={data.email} handleChange={e => setData('email', e.target.value)}/>
+                </div>
+                <Button>
+                    Add User
+                </Button>
+            </div>
         </form>
     )
 }

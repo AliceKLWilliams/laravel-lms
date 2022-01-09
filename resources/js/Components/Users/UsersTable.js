@@ -1,4 +1,5 @@
 import React from 'react';
+import LinkButton from '../LinkButton';
 
 const UsersTable = ({users}) => {
     return (
@@ -8,6 +9,7 @@ const UsersTable = ({users}) => {
                     <th>Name</th>
                     <th>Email</th>
                     <th>User Role</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,6 +18,9 @@ const UsersTable = ({users}) => {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>{user.user_role.display_name}</td>
+                        <td>
+                        <LinkButton href={route('admin.user.show', user)}>View</LinkButton>
+                        </td>
                     </tr>
                 ))}
             </tbody>

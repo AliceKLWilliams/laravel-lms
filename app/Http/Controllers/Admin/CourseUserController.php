@@ -25,6 +25,6 @@ class CourseUserController extends Controller
     {
         $course->removeUser($user);
 
-        return Redirect::route('admin.course.edit', $course);
+        return back();
     }
 }
