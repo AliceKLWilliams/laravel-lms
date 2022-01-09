@@ -15,30 +15,56 @@
 	@apply py-4 px-5 text-left;
 }
 
+h1,
+.h1 {
+	@apply text-4xl font-bold;
+}
+
+h2,
+.h2 {
+	@apply text-3xl font-bold;
+}
+
+h3,
+.h3 {
+	@apply text-2xl font-bold;
+}
+
+h4,
+.h4 {
+	@apply text-xl font-bold;
+}
+
+h5,
+.h5 {
+	@apply text-lg font-bold;
+}
+
+
 .front {
 	h1,
 	.h1 {
-		@apply text-4xl font-bold mb-4;
+		@apply mb-4;
 	}
 	
 	h2,
 	.h2 {
-		@apply text-3xl font-bold mb-3;
+		@apply mb-3;
 	}
 	
 	h3,
 	.h3 {
-		@apply text-2xl font-bold mb-2;
+		@apply mb-2;
 	}
 	
 	h4,
 	.h4 {
-		@apply text-xl font-bold mb-2;
+		@apply b-2;
 	}
 	
 	h5,
 	.h5 {
-		@apply text-lg font-bold mb-2;
+		@apply b-2;
 	}
 }
 
