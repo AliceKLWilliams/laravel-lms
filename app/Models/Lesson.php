@@ -20,4 +20,9 @@ class Lesson extends Model
     {
         return $this->module->course();
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
