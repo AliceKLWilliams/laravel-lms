@@ -1,45 +1,37 @@
 import Authenticated from '@/Layouts/Authenticated';
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
+import Tabs from '@/Components/Tabs';
+import Tab from '@/Components/Tab';
+import EditLessonForm from '@/Components/Admin/Lesson/EditLessonForm';
+import QuestionsTable from '@/Components/Admin/Questions/QuestionsTable';
+import LinkButton from '@/Components/LinkButton';
 
-import { useForm } from '@inertiajs/inertia-react'
-import Button from '@/Components/Button';
-import LessonFields from '../../../Components/Admin/Lesson/LessonFields';
-import ValidationErrors from '@/Components/ValidationErrors';
+export default ({course, module, lesson, questions, auth, errors}) => {
+    let [currentTab, setCurrentTab] = useState('content');
 
-export default ({course, module, lesson, auth, errors}) => {
-    const { data, setData, put, transform, errors: formErrors } = useForm({
-        title: lesson.title
-    });
+    let content = <EditLessonForm course={course} module={module} lesson={lesson}/>;
 
-    let editorRef = useRef(null);
-
-    transform(data => ({
-        ...data,
-        content: editorRef.current.getContent()
-    }));
+    if (currentTab === 'questions') {
+        content = (
+            <div>
+                <LinkButton href={route('admin.course.module.lesson.question.create', {course, module, lesson})} className="mb-4">Create Question</LinkButton>
+                <QuestionsTable questions={questions}/>
+            </div>
+        )
+    }
 
     return (
         <Authenticated
             auth={auth}
             errors={errors}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Edit - {lesson.title}</h2>}>
-            <form
-                className="mb-8"
-                onSubmit={e => {
-                    e.preventDefault();
-                    put(route('admin.course.module.lesson.update', {
-                        course,
-                        module,
-                        lesson
-                    }));
-                }}>
-                <ValidationErrors errors={formErrors} />
-                <LessonFields form={data} setData={setData} content={lesson.content} editorRef={editorRef}/>
-                <Button className="mt-4">
-                    Save Changes
-                </Button>
-            </form>
 
+            <Tabs>
+                <Tab isActive={currentTab === 'content'} onClick={() => setCurrentTab('content')}>Content</Tab>
+                <Tab isActive={currentTab === 'questions'} onClick={() => setCurrentTab('questions')}>Questions</Tab>
+            </Tabs>
+            
+            {content}
         </Authenticated>
     )
 }

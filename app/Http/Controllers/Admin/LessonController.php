@@ -44,7 +44,8 @@ class LessonController extends Controller
         return Inertia::render('Admin/Lesson/Edit', [
             'module' => $module,
             'course' => $course,
-            'lesson' => $lesson
+            'lesson' => $lesson,
+            'questions' => $lesson->questions
         ]);
     }
 
