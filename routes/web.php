@@ -37,6 +37,7 @@ Route::middleware(['auth'])->group(function() {
     Route::resource('course.module', App\Http\Controllers\Front\ModuleController::class)->only(['show']);
     Route::resource('course.module.lesson', App\Http\Controllers\Front\LessonController::class)->only(['show']);
     Route::get('/my-courses', [App\Http\Controllers\Front\MyCoursesController::class, 'show'])->name('my-courses');
+    Route::post('/lesson/{lesson}/user/{user}', [App\Http\Controllers\Front\LessonUserController::class, 'store'])->name('lesson.user.store');
 });
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified', 'isAdmin'])->group(function () {
