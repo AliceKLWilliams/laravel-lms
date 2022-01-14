@@ -4982,6 +4982,7 @@ __webpack_require__.r(__webpack_exports__);
 
   if (isComplete) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      "class": "font-bold",
       children: "Lesson Completed"
     });
   }
@@ -7459,6 +7460,7 @@ __webpack_require__.r(__webpack_exports__);
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
       children: lesson.title
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "mb-6",
       dangerouslySetInnerHTML: {
         __html: lesson.content
       }

@@ -17,7 +17,8 @@ class AdminSeeder extends Seeder
     public function run()
     {
         $users = [
-            'Alice Williams' => 'alice@10degrees.uk'
+            'Alice Williams' => 'alice@10degrees.uk',
+            'John Doe' => 'test@10degrees.uk'
         ];
 
         $adminUserRole = UserRole::where('name', 'admin')->first();

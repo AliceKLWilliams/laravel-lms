@@ -7,7 +7,7 @@ export default function({lesson, user, isComplete}) {
 
     if (isComplete) {
         return (
-            <p>Lesson Completed</p>
+            <p class="font-bold">Lesson Completed</p>
         )
     }
 
