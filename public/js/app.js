@@ -1522,9 +1522,7 @@ var Editor = /** @class */ (function (_super) {
                 if (newContent !== _this.currentContent) {
                     _this.currentContent = newContent;
                     if ((0,_Utils__WEBPACK_IMPORTED_MODULE_3__.isFunction)(_this.props.onEditorChange)) {
-                        var format = _this.props.outputFormat;
-                        var out = format === 'html' ? newContent : editor.getContent({ format: format });
-                        _this.props.onEditorChange(out, editor);
+                        _this.props.onEditorChange(newContent, editor);
                     }
                 }
             }
@@ -1762,7 +1760,7 @@ var Editor = /** @class */ (function (_super) {
     };
     Editor.propTypes = _EditorPropTypes__WEBPACK_IMPORTED_MODULE_4__.EditorPropTypes;
     Editor.defaultProps = {
-        cloudChannel: '5'
+        cloudChannel: '6'
     };
     return Editor;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component));
@@ -1866,9 +1864,15 @@ var eventPropTypes = {
     onShow: prop_types__WEBPACK_IMPORTED_MODULE_0__.func,
     onSubmit: prop_types__WEBPACK_IMPORTED_MODULE_0__.func,
     onUndo: prop_types__WEBPACK_IMPORTED_MODULE_0__.func,
-    onVisualAid: prop_types__WEBPACK_IMPORTED_MODULE_0__.func
+    onVisualAid: prop_types__WEBPACK_IMPORTED_MODULE_0__.func,
+    onSkinLoadError: prop_types__WEBPACK_IMPORTED_MODULE_0__.func,
+    onThemeLoadError: prop_types__WEBPACK_IMPORTED_MODULE_0__.func,
+    onModelLoadError: prop_types__WEBPACK_IMPORTED_MODULE_0__.func,
+    onPluginLoadError: prop_types__WEBPACK_IMPORTED_MODULE_0__.func,
+    onIconsLoadError: prop_types__WEBPACK_IMPORTED_MODULE_0__.func,
+    onLanguageLoadError: prop_types__WEBPACK_IMPORTED_MODULE_0__.func,
 };
-var EditorPropTypes = __assign({ apiKey: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, id: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, inline: prop_types__WEBPACK_IMPORTED_MODULE_0__.bool, init: prop_types__WEBPACK_IMPORTED_MODULE_0__.object, initialValue: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, onEditorChange: prop_types__WEBPACK_IMPORTED_MODULE_0__.func, outputFormat: prop_types__WEBPACK_IMPORTED_MODULE_0__.oneOf(['html', 'text']), value: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, tagName: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, cloudChannel: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, plugins: prop_types__WEBPACK_IMPORTED_MODULE_0__.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0__.string, prop_types__WEBPACK_IMPORTED_MODULE_0__.array]), toolbar: prop_types__WEBPACK_IMPORTED_MODULE_0__.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0__.string, prop_types__WEBPACK_IMPORTED_MODULE_0__.array]), disabled: prop_types__WEBPACK_IMPORTED_MODULE_0__.bool, textareaName: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, tinymceScriptSrc: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, rollback: prop_types__WEBPACK_IMPORTED_MODULE_0__.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0__.number, prop_types__WEBPACK_IMPORTED_MODULE_0__.oneOf([false])]), scriptLoading: prop_types__WEBPACK_IMPORTED_MODULE_0__.shape({
+var EditorPropTypes = __assign({ apiKey: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, id: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, inline: prop_types__WEBPACK_IMPORTED_MODULE_0__.bool, init: prop_types__WEBPACK_IMPORTED_MODULE_0__.object, initialValue: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, onEditorChange: prop_types__WEBPACK_IMPORTED_MODULE_0__.func, value: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, tagName: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, cloudChannel: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, plugins: prop_types__WEBPACK_IMPORTED_MODULE_0__.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0__.string, prop_types__WEBPACK_IMPORTED_MODULE_0__.array]), toolbar: prop_types__WEBPACK_IMPORTED_MODULE_0__.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0__.string, prop_types__WEBPACK_IMPORTED_MODULE_0__.array]), disabled: prop_types__WEBPACK_IMPORTED_MODULE_0__.bool, textareaName: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, tinymceScriptSrc: prop_types__WEBPACK_IMPORTED_MODULE_0__.string, rollback: prop_types__WEBPACK_IMPORTED_MODULE_0__.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_0__.number, prop_types__WEBPACK_IMPORTED_MODULE_0__.oneOf([false])]), scriptLoading: prop_types__WEBPACK_IMPORTED_MODULE_0__.shape({
         async: prop_types__WEBPACK_IMPORTED_MODULE_0__.bool,
         defer: prop_types__WEBPACK_IMPORTED_MODULE_0__.bool,
         delay: prop_types__WEBPACK_IMPORTED_MODULE_0__.number
