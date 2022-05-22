@@ -37,12 +37,14 @@ Route::middleware(['auth'])->group(function() {
     Route::resource('course.module', App\Http\Controllers\Front\ModuleController::class)->only(['show']);
     Route::resource('course.module.lesson', App\Http\Controllers\Front\LessonController::class)->only(['show']);
     Route::get('/my-courses', [App\Http\Controllers\Front\MyCoursesController::class, 'show'])->name('my-courses');
+    Route::post('/lesson/{lesson}/user/{user}', [App\Http\Controllers\Front\LessonUserController::class, 'store'])->name('lesson.user.store');
 });
 
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified', 'isAdmin'])->group(function () {
     Route::resource('course', App\Http\Controllers\Admin\CourseController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
     Route::resource('course.module', App\Http\Controllers\Admin\ModuleController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
     Route::resource('course.module.lesson', App\Http\Controllers\Admin\LessonController::class)->only(['index', 'edit', 'create', 'store', 'update', 'destroy']);
+    Route::resource('course.module.lesson.question', App\Http\Controllers\Admin\QuestionController::class)->only(['create']);
 
     Route::resource('user', App\Http\Controllers\Admin\UserController::class)->only(['index', 'create', 'store', 'show']);
 
